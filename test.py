@@ -1,0 +1,13 @@
+import bpmn_python
+import bpmn_python.bpmn_diagram_export
+import bpmn_python.bpmn_diagram_import
+import bpmn_python.bpmn_diagram_layouter
+import bpmn_python.bpmn_diagram_rep
+import bpmn_python.bpmn_diagram_visualizer
+
+filepath = "./assets/bpmn_test.xml"
+
+testXMLGraph = bpmn_python.bpmn_diagram_rep.BpmnDiagramGraph()
+bpmn_python.bpmn_diagram_import.BpmnDiagramGraphImport.testXMLGraph.load_diagram_from_xml_file(filepath,testXMLGraph)
+
+bpmn_python.bpmn_diagram_visualizer.visualize_diagram(testXMLGraph)
