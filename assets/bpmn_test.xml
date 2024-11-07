@@ -1,34 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+             xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+             xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+             xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+             id="Definitions_1"
+             targetNamespace="http://bpmn.io/schema/bpmn">
 
-<definitions id="definitions"
-             xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
-             xmlns:activiti="http://activiti.org/bpmn"
-             targetNamespace="Examples" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="
-             http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd">
+  <process id="Process_1" isExecutable="true">
+    <!-- Start Event -->
+    <startEvent id="StartEvent_1" name="Start">
+      <outgoing>Flow_1</outgoing>
+    </startEvent>
 
+    <!-- Task -->
+    <task id="Task_1" name="Do Task">
+      <incoming>Flow_1</incoming>
+      <outgoing>Flow_2</outgoing>
+    </task>
 
-    <process id="camelProcess">
+    <!-- End Event -->
+    <endEvent id="EndEvent_1" name="End">
+      <incoming>Flow_2</incoming>
+    </endEvent>
 
-        <startEvent id="start"/>
-        <sequenceFlow id="flow1" sourceRef="start" targetRef="serviceTask1"/>
+    <!-- Sequence Flows -->
+    <sequenceFlow id="Flow_1" sourceRef="StartEvent_1" targetRef="Task_1"/>
+    <sequenceFlow id="Flow_2" sourceRef="Task_1" targetRef="EndEvent_1"/>
+  </process>
 
-        <serviceTask id="serviceTask1" activiti:type="camel">
-          <extensionElements>
-            <activiti:field name="camelContext" stringValue="camelContext" />
-          </extensionElements>
-        </serviceTask>
-        <sequenceFlow id="flow2" sourceRef="serviceTask1" targetRef="receive"/>
+  <!-- BPMN Diagram -->
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
 
-        <receiveTask id="receive" name="Wait State" />
+      <!-- Start Event Diagram -->
+      <bpmndi:BPMNShape id="StartEvent_1_di" bpmnElement="StartEvent_1">
+        <dc:Bounds x="100" y="100" width="36" height="36"/>
+      </bpmndi:BPMNShape>
 
-        <sequenceFlow id="flow3" sourceRef="receive" targetRef="serviceTask2"/>
+      <!-- Task Diagram -->
+      <bpmndi:BPMNShape id="Task_1_di" bpmnElement="Task_1">
+        <dc:Bounds x="200" y="90" width="80" height="50"/>
+      </bpmndi:BPMNShape>
 
-        <serviceTask id="serviceTask2" activiti:type="camel" />
+      <!-- End Event Diagram -->
+      <bpmndi:BPMNShape id="EndEvent_1_di" bpmnElement="EndEvent_1">
+        <dc:Bounds x="350" y="100" width="36" height="36"/>
+      </bpmndi:BPMNShape>
 
-        <sequenceFlow id="flow4" sourceRef="serviceTask2" targetRef="end"/>
-        <endEvent id="end"/>
+      <!-- Sequence Flow Diagrams -->
+      <bpmndi:BPMNEdge id="Flow_1_di" bpmnElement="Flow_1">
+        <di:waypoint x="136" y="118"/>
+        <di:waypoint x="200" y="118"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_2_di" bpmnElement="Flow_2">
+        <di:waypoint x="280" y="118"/>
+        <di:waypoint x="350" y="118"/>
+      </bpmndi:BPMNEdge>
 
-    </process>
-
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
 </definitions>
