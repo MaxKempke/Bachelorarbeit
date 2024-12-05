@@ -32,7 +32,7 @@ prompt_extracting_roles = ChatPromptTemplate.from_messages(
     [
         (
             'system',
-            'Du bist ein Prozessmanager und versuchst Rollen aus einer Prozessbeschreibung zu heraus zu lesen.',
+            'Du bist ein Prozessmanager und versuchst Rollen aus einer Prozessbeschreibung heraus zu lesen.',
         ),
         ("human", 'Extrahiere aus folgender Prozessbeschreibung alle Beteiligten Rollen und gib diese als Liste zurück. Prozessbeschreibung: "{prozessbeschreibung}"'),
     ]
@@ -42,7 +42,7 @@ prompt_extracting_activities = ChatPromptTemplate.from_messages(
     [
         (
             'system',
-            'Du bist ein Prozessmanager und versuchst Aktivitäten aus einer Prozessbeschreibung zu heraus zu lesen.',
+            'Du bist ein Prozessmanager und versuchst Aktivitäten aus einer Prozessbeschreibung heraus zu lesen.',
         ),
         ("human", 'Extrahiere aus folgender Prozessbeschreibung alle Aktivitäten und gib diese als Liste zurück. Die Aktivitäten sollten so beschrieben sein, wie sie auch in einem BPMN Diagramm genutzt werden. Prozessbeschreibung: "{prozessbeschreibung}"'),
     ]
