@@ -1,0 +1,29 @@
+Debriefing-Gespräch führen(Optional: What information or ressource does the client need to provide when triggering this process?) 
+HR ist bekannt, wann der/die Mitarbeiter/in die Firma verlassen wird 
+HR ist bekannt, durch wen das Verlassen der Firma zu Stande kam(von welcher Seite wurde der Vertrag gekündigt ist wichtig um das Gespräch einzuleiten) 
+HR hat weitere wichtige Informationen für das Debriefing aus Abteilungen, GF, Mitarbeitern erhalten 
+HR ist über eventuelle Eskalationen Informiert 
+
+(Optional:What information or ressource is given to the client when the process is done?) 
+Es wurden alle offenen Angelegenheiten zum Thema Hardwarerückgabe geklärt 
+möchte der Mitarbeiter Hardware abkaufen, was muss er abgeben, ist noch alles vorhanden, was ist alles vorhanden 
+Es wurde über Übergaben in Projekten gesprochen (muss etwas übergeben werden, wer  ist verantwortliche, wer kümmert sich darum, gibt es offene Punkte) 
+Es wurde dem/der Mitarbeiter/in der Prozess bei Kündigung mitgeteilt: 
+
+Prozess: Kommunikation bei Kündigung 
+Es wurde Feedback durch den/die Mitarbeiter/in eingeholt 
+Achtung: Hier wird kein Feedback an den Mitarbeitenden gegeben 
+Sobald bekannt wird, dass ein*e Mitarbeiter*in die Firma verlässt, wird zeitnah ein Debriefing-Gespräch geführt. 
+
+Inhalte: 
+bei Bedarf nach dem Grund der Kündigung fragen, evtl gibts die Möglichkeit einer Umstimmung? 
+Offene Themen klären 
+Projektübergaben 
+Kündigungsfrist 
+wann wäre letzter Arbeitstag 
+Besonderheiten 
+Hardware/Assets-Rückgabe (Was, wann) 
+Feedback erfragen (freiwillig) 
+
+Dokumentation:
+Alle Gespräche werden dokumentiert (das wird demjenigen auch kommuniziert) und hier abgelegt: Debriefinggespräche . Sollten wichtige Hinweise oder Missstände genannt werden, wird diesen nachgegangen. 

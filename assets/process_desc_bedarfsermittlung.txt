@@ -1,0 +1,55 @@
+(Who is allowed to trigger this process? When shall the process automatically trigger repeatedly?) 
+Geschäftsführung 
+HR-Committee 
+Inhalte aus dem Staffing-Meeting 
+
+(Optional: What information or ressource does the client need to provide when triggering this process?) 
+stetiges Wachstum 
+Stellenmangel 
+Längerer Ausfall von Mitarbeitern/innen (Kündigung, Schwangerschaft, lange Krankheit, Sabbatical) 
+Anfragen von Kunden 
+Neuaufträge von Kunden 
+Projektwechsel von Mitarbeiter/innen 
+Interner Stellenbedarf 
+
+(Optional: What information or ressource is given to the client when the process is done?) 
+Stellenbeschreibung 
+Anzahl der auszuschreibenden Stellen 
+Datum bis wann die Stelle/n besetzt sein soll/en 
+Bei nachfolgend aufgezählten Sachverhalten kann es dazu kommen, dass neue Stellen ausgeschrieben werden müssen: 
+bei Stellenmangel bzw. Knappheit der Ressourcen 
+Es entsteht durch verschiedene Faktoren Mehrarbeit, die von den bisher eingesetzten Mitarbeitern/innen nicht mehr geleistet werden kann 
+Längerer Ausfall von Mitarbeitern/innen 
+Kündigung 
+Schwangerschaft 
+lange Krankheit 
+Sabbatical 
+Anfragen von Kunden 
+Der Kunde wünscht mehr Mitarbeiter/inne in einem bestehenden Projekt 
+Der Kunde möchte ein Projekt umstellen, zB einen Mitarbeiter aus dem Projekt nehmen 
+Anstehende Neuaufträge von Kunden 
+Neukunde ist in der Pipeline, braucht für ein Projekt Mitarbeiter/innen 
+Neukunde hat unterschrieben und braucht für ein Projekt Mitarbeiter/innen 
+
+Projektwechsel von Mitarbeiter/innen 
+Ein/e Mitarbeiter/in möchte/muss ein Projekt wechseln und muss nachbesetzt werden 
+Interner Stellenbedarf 
+Im Backoffice entstehen neue Tätigkeiten, die von den aktuellen Mitarbeiter/innen nicht abgedeckt werden können (zeitlich oder fachlich) 
+Wer stellt fest, dass eine neue Stelle ausgeschrieben werden muss? 
+Im wöchentlichen Staffing-Meeting (bestehend aus Co-CO’s, CEO’s, Tribe-Leads und HR) werden Bedarfe und Kundenanfragen eruiert, hieraus kann hervorgehen, dass eine neue Stelle ausgeschrieben werden muss 
+Der Prozess Staffing wird dokumentiert unter 
+Staffing requests . 
+Im wöchentlichen HR-Committee-Meeting (bestehend aus CEO’s, HR und Tribe-Lead Incubation), kann ebenfalls Bedarf entstehen bzw. dort geäußert werden zB für internen Stellenbedarf 
+Aus dem Input von Mitarbeitergesprächen kann es zu Bedarf an Stellenausschreibungen kommen, hierüber informiert der jeweilige Tribe-Lead die HR-Abteilung, abgestimmt und besprochen wird dies dann im HR-Committee 
+Durch die Mitteilung der Geschäftsführung 
+
+Freigabe der Ausschreibung: 
+Ist der Bedarf geäußert und durch die FinCo freigegeben, wird eine Stelle ausgeschrieben. 
+Rollen in HR dazu: 
+Es gibt jeweils eine/n Hauptverantwortlichen für die Ausschreibung von Stellenanzeigen von 
+Werkstudentenstellen / Praktikanten / Azubis 
+Vollzeitangestellten / Teilzeitangestellten mit Berufserfahrung 
+
+Vorgehen innerhalb HR 
+Jeder Bedarf an neuen Stellenausschreibungen, der entsteht, wird mit dem Hauptverantwortlichen besprochen 
+der Hauptverantwortliche ist treibend bei Formulierung, Vollständigkeit, Einholen von Informationen, Ausschreibung, Löschung nach Einstellung 
