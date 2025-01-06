@@ -74,11 +74,24 @@ prompt_creating_bpmn_diagramm = ChatPromptTemplate.from_messages(
     [
         (
             'system',
-            'Du bist ein Prozessmanager. Dir werden Rollen, Aktivitäten und eine Prozessbeschreibung gegeben. Daraus versuchst du ein BPMN 2.0 Dokument zu erstellen.'
+            'Du bist ein Prozessmanager. Dir werden Rollen, Aktivitäten und eine Prozessbeschreibung gegeben. Daraus erstellst du ein Draw.io konformes XML Dokument.'
         ),
-        ("human", "Erstelle aus den gegebenen Rollen, Aktivitäten und der Prozessbeschreibung ein Prozessmodell.Das XML muss Draw.io konform sein. Gib mir nur das Ergebnis in XML zurück. Es sollen alle Aktivitäten und Rollen verwendet werden. Rollen: {roles}. Aktivitäten: {activities}. Prozessbeschreibung: {process}")
+        ("human", 
+         '''Erstelle aus den gegebenen Rollen, Aktivitäten und der Prozessbeschreibung ein Prozessmodell.
+         Das XML muss Draw.io konform sein.
+         Stelle sicher, dass alle Rollen als Swimlane dargestellt werden.
+         Stelle sicher, dass Verzweigungen als Rauten dargestellt werden und dass diese beschriftet sind.
+         Gib mir nur das Ergebnis in XML zurück. 
+         Achte vor allem drauf, dass sich keine Elemente überlappen.
+         Swimlanes sind immer nebeneinander.
+         Achte auf eine angemessen Breite der Swimlanes und verdopple diese dann.
+         Die Höhe der Swimlanes muss immer bis an das Ende der Seite gehen.
+         Es sollen alle Aktivitäten und Rollen verwendet werden. 
+         Rollen die keine Aufgabe übernehmen werden weggelassen.
+         Rollen: {roles}. Aktivitäten: {activities}. Prozessbeschreibung: {process}''')
     ]
 )
+
 
 prompt_roles_refreshed = ChatPromptTemplate.from_messages(
     [
