@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <mxfile host="app.diagrams.net">
   <diagram name="Debriefing Prozess" id="DebriefingProzess">
     <mxGraphModel dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
@@ -6,106 +7,107 @@
         <mxCell id="1" parent="0" />
 
         <!-- Start Event -->
-        <mxCell id="2" value="Start" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+        <mxCell id="2" value="Start" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="100" y="100" width="40" height="40" as="geometry" />
         </mxCell>
 
         <!-- HR Pool -->
-        <mxCell id="3" value="HR" style="swimlane;horizontal=0;" vertex="1" parent="1">
-          <mxGeometry x="0" y="0" width="600" height="800" as="geometry" />
+        <mxCell id="3" value="HR" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="800" height="200" as="geometry" />
         </mxCell>
 
         <!-- HR Lane -->
-        <mxCell id="4" value="HR" style="swimlane;horizontal=1;" vertex="1" parent="3">
-          <mxGeometry x="0" y="0" width="600" height="200" as="geometry" />
+        <mxCell id="4" value="HR" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="3">
+          <mxGeometry x="0" y="0" width="800" height="200" as="geometry" />
+        </mxCell>
+
+        <!-- HR Activities -->
+        <mxCell id="5" value="Informationen von HR einholen" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="4">
+          <mxGeometry x="200" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Debriefing-Gespräch führen" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="4">
+          <mxGeometry x="350" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Dokumentation der Gespräche" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="4">
+          <mxGeometry x="500" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Mitarbeiter/in Pool -->
+        <mxCell id="8" value="Mitarbeiter/in" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="0" y="200" width="800" height="200" as="geometry" />
         </mxCell>
 
         <!-- Mitarbeiter/in Lane -->
-        <mxCell id="5" value="Mitarbeiter/in" style="swimlane;horizontal=1;" vertex="1" parent="3">
-          <mxGeometry x="0" y="200" width="600" height="200" as="geometry" />
+        <mxCell id="9" value="Mitarbeiter/in" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="8">
+          <mxGeometry x="0" y="0" width="800" height="200" as="geometry" />
+        </mxCell>
+
+        <!-- Mitarbeiter/in Activities -->
+        <mxCell id="10" value="Feedback vom Mitarbeiter einholen" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="9">
+          <mxGeometry x="200" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Abteilungen Pool -->
+        <mxCell id="11" value="Abteilungen" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="0" y="400" width="800" height="200" as="geometry" />
         </mxCell>
 
         <!-- Abteilungen Lane -->
-        <mxCell id="6" value="Abteilungen" style="swimlane;horizontal=1;" vertex="1" parent="3">
-          <mxGeometry x="0" y="400" width="600" height="200" as="geometry" />
+        <mxCell id="12" value="Abteilungen" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="11">
+          <mxGeometry x="0" y="0" width="800" height="200" as="geometry" />
+        </mxCell>
+
+        <!-- Abteilungen Activities -->
+        <mxCell id="13" value="Wichtige Informationen für das Debriefing erhalten" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="12">
+          <mxGeometry x="200" y="500" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Geschäftsführung Pool -->
+        <mxCell id="14" value="Geschäftsführung (GF)" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="0" y="600" width="800" height="200" as="geometry" />
         </mxCell>
 
         <!-- Geschäftsführung Lane -->
-        <mxCell id="7" value="Geschäftsführung (GF)" style="swimlane;horizontal=1;" vertex="1" parent="3">
-          <mxGeometry x="0" y="600" width="600" height="200" as="geometry" />
+        <mxCell id="15" value="Geschäftsführung (GF)" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="14">
+          <mxGeometry x="0" y="0" width="800" height="200" as="geometry" />
         </mxCell>
 
-        <!-- Debriefing-Gespräch führen -->
-        <mxCell id="8" value="Debriefing-Gespräch führen" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="4">
-          <mxGeometry x="100" y="50" width="120" height="60" as="geometry" />
+        <!-- Geschäftsführung Activities -->
+        <mxCell id="16" value="Über eventuelle Eskalationen informiert sein" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="15">
+          <mxGeometry x="200" y="700" width="120" height="60" as="geometry" />
         </mxCell>
 
-        <!-- Informationen von HR sammeln -->
-        <mxCell id="9" value="Informationen von HR sammeln" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="5">
-          <mxGeometry x="100" y="250" width="120" height="60" as="geometry" />
+        <!-- Extra Rolle Pool -->
+        <mxCell id="17" value="Extra Rolle" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="0" y="800" width="800" height="200" as="geometry" />
         </mxCell>
 
-        <!-- Informationen über eventuelle Eskalationen einholen -->
-        <mxCell id="10" value="Informationen über eventuelle Eskalationen einholen" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="6">
-          <mxGeometry x="100" y="450" width="120" height="60" as="geometry" />
+        <!-- Extra Rolle Lane -->
+        <mxCell id="18" value="Extra Rolle" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="17">
+          <mxGeometry x="0" y="0" width="800" height="200" as="geometry" />
         </mxCell>
 
-        <!-- Klärung der offenen Angelegenheiten zur Hardwarerückgabe -->
-        <mxCell id="11" value="Klärung der offenen Angelegenheiten zur Hardwarerückgabe" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="7">
-          <mxGeometry x="100" y="650" width="120" height="60" as="geometry" />
-        </mxCell>
-
-        <!-- Über Hardwareabkauf sprechen -->
-        <mxCell id="12" value="Über Hardwareabkauf sprechen" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="4">
-          <mxGeometry x="300" y="50" width="120" height="60" as="geometry" />
-        </mxCell>
-
-        <!-- Über Projektübergaben sprechen -->
-        <mxCell id="13" value="Über Projektübergaben sprechen" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="5">
-          <mxGeometry x="300" y="250" width="120" height="60" as="geometry" />
-        </mxCell>
-
-        <!-- Prozess bei Kündigung mitteilen -->
-        <mxCell id="14" value="Prozess bei Kündigung mitteilen" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="6">
-          <mxGeometry x="300" y="450" width="120" height="60" as="geometry" />
-        </mxCell>
-
-        <!-- Feedback vom Mitarbeiter einholen -->
-        <mxCell id="15" value="Feedback vom Mitarbeiter einholen" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="7">
-          <mxGeometry x="300" y="650" width="120" height="60" as="geometry" />
+        <!-- Extra Rolle Activities -->
+        <mxCell id="19" value="Nachgehen von wichtigen Hinweisen oder Missständen" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="18">
+          <mxGeometry x="200" y="900" width="120" height="60" as="geometry" />
         </mxCell>
 
         <!-- End Event -->
-        <mxCell id="16" value="End" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-          <mxGeometry x="500" y="100" width="40" height="40" as="geometry" />
+        <mxCell id="20" value="End" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="100" width="40" height="40" as="geometry" />
         </mxCell>
 
         <!-- Sequence Flows -->
-        <mxCell id="17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="2" target="8">
+        <mxCell id="21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="2" target="5">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8" target="9">
+        <mxCell id="22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5" target="6">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="9" target="10">
+        <mxCell id="23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="6" target="7">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="10" target="11">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="11" target="12">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="12" target="13">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="13" target="14">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="14" target="15">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="15" target="16">
+        <mxCell id="24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7" target="20">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>

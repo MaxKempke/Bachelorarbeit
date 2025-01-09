@@ -1,0 +1,106 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Prozessmodell" id="prozessmodell">
+    <mxGraphModel dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Start Event -->
+        <mxCell id="start" value="Start" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="1">
+          <mxGeometry x="100" y="100" width="80" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Debriefing-Gespräch führen -->
+        <mxCell id="debriefing" value="Debriefing-Gespräch führen" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="300" y="100" width="160" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Nach dem Grund der Kündigung fragen -->
+        <mxCell id="grundKündigung" value="Nach dem Grund der Kündigung fragen" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="300" y="200" width="160" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Offene Themen klären -->
+        <mxCell id="offeneThemen" value="Offene Themen klären" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="300" y="300" width="160" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Projektübergaben -->
+        <mxCell id="projektÜbergaben" value="Projektübergaben" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="300" y="400" width="160" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Kündigungsfrist -->
+        <mxCell id="kündigungsfrist" value="Kündigungsfrist" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="300" y="500" width="160" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Letzter Arbeitstag -->
+        <mxCell id="letzterArbeitstag" value="Wann wäre letzter Arbeitstag" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="300" y="600" width="160" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Besonderheiten -->
+        <mxCell id="besonderheiten" value="Besonderheiten" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="300" y="700" width="160" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Hardware/Assets-Rückgabe -->
+        <mxCell id="hardwareRückgabe" value="Hardware/Assets-Rückgabe (Was, wann)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="300" y="800" width="160" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Feedback erfragen -->
+        <mxCell id="feedback" value="Feedback erfragen (freiwillig)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="300" y="900" width="160" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Gespräch dokumentieren und ablegen -->
+        <mxCell id="dokumentation" value="Gespräch dokumentieren und ablegen" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="300" y="1000" width="160" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- End Event -->
+        <mxCell id="end" value="Ende" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="1">
+          <mxGeometry x="500" y="1000" width="80" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Connectors -->
+        <mxCell id="connector1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="start" target="debriefing">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="connector2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="debriefing" target="grundKündigung">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="connector3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="grundKündigung" target="offeneThemen">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="connector4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="offeneThemen" target="projektÜbergaben">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="connector5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="projektÜbergaben" target="kündigungsfrist">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="connector6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="kündigungsfrist" target="letzterArbeitstag">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="connector7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="letzterArbeitstag" target="besonderheiten">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="connector8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="besonderheiten" target="hardwareRückgabe">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="connector9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="hardwareRückgabe" target="feedback">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="connector10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="feedback" target="dokumentation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="connector11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="dokumentation" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,97 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Prozessmodell" id="prozessmodell">
+    <mxGraphModel dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Swimlane: Mitarbeiter -->
+        <mxCell id="swimlane_mitarbeiter" value="Mitarbeiter" style="swimlane" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="200" height="200" as="geometry" />
+        </mxCell>
+
+        <!-- Swimlane: HR -->
+        <mxCell id="swimlane_hr" value="HR" style="swimlane" vertex="1" parent="1">
+          <mxGeometry x="200" y="0" width="200" height="400" as="geometry" />
+        </mxCell>
+
+        <!-- Swimlane: Geschäftsführung -->
+        <mxCell id="swimlane_geschaeftsfuehrung" value="Geschäftsführung" style="swimlane" vertex="1" parent="1">
+          <mxGeometry x="400" y="0" width="200" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- Aktivitäten -->
+        <mxCell id="activity1" value="Mitarbeiter informiert HR über die Absicht, einer Nebentätigkeit nachzugehen oder diese bereits auszuüben." style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="swimlane_mitarbeiter">
+          <mxGeometry x="20" y="20" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="activity2" value="Informationen über die Nebentätigkeit einholen." style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="swimlane_hr">
+          <mxGeometry x="20" y="20" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="activity3" value="HR prüft, ob die Nebentätigkeit im Wettbewerb zu adorsys steht." style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="swimlane_hr">
+          <mxGeometry x="20" y="100" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Entscheidung -->
+        <mxCell id="decision1" value="Wettbewerb?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="swimlane_hr">
+          <mxGeometry x="60" y="180" width="80" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="activity4" value="Ablehnung der Nebentätigkeit (ggf. Rücksprache mit der Geschäftsführung) bei Wettbewerb." style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="swimlane_hr">
+          <mxGeometry x="20" y="280" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="activity5" value="Dokument 'Erlaubnis Nebentätigkeit' erstellen, wenn kein Wettbewerb besteht." style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="swimlane_hr">
+          <mxGeometry x="20" y="280" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="activity6" value="Rücksprache mit dem Mitarbeiter oder der Geschäftsführung bei Unklarheiten." style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="swimlane_hr">
+          <mxGeometry x="20" y="360" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="activity7" value="Dokument zur Unterschrift vorlegen und dem Mitarbeiter zusenden." style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="swimlane_hr">
+          <mxGeometry x="20" y="440" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="activity8" value="Unterschriebenes Dokument einscannen und in der Personalakte ablegen." style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="swimlane_hr">
+          <mxGeometry x="20" y="520" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Verbindungen -->
+        <mxCell id="edge1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;" edge="1" parent="1" source="activity1" target="activity2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;" edge="1" parent="1" source="activity2" target="activity3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;" edge="1" parent="1" source="activity3" target="decision1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge4" value="Ja" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;" edge="1" parent="1" source="decision1" target="activity4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge5" value="Nein" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;" edge="1" parent="1" source="decision1" target="activity5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;" edge="1" parent="1" source="activity5" target="activity6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;" edge="1" parent="1" source="activity6" target="activity7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;" edge="1" parent="1" source="activity7" target="activity8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
