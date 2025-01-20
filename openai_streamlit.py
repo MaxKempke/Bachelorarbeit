@@ -32,21 +32,31 @@ if 'desc_files_read' not in st.session_state:
     st.session_state.process_desc_nebentaetigkeiten = ""
     st.session_state.process_desc_debriefing = ""
     st.session_state.process_desc_bedarfsermittlung = ""
+    
+    # example input files for modell creating prompt
+    st.session_state.example_input_file_1 = ""
+    st.session_state.example_input_file_2 = ""
 
 if st.session_state.desc_files_read == False:
     file_process_desc_nebentaetigkeiten = open("assets/process_desc_nebentaetigkeiten.txt", encoding="utf8")
     file_process_desc_debriefing = open("assets/process_desc_debriefing.txt", encoding="utf8")
     file_process_desc_bedarfsermittlung = open("assets/process_desc_bedarfsermittlung.txt", encoding="utf8")
+    file_input_example_1 = open("assets/example_for_ai_1.drawio", encoding="utf8")
+    file_input_example_2 = open("assets/example_for_ai_2.drawio", encoding="utf8")
 
     # save process descriptions
     process_desc_nebentaetigkeiten = file_process_desc_nebentaetigkeiten.read()
     process_desc_debriefing = file_process_desc_debriefing.read()
     process_desc_bedarfsermittlung = file_process_desc_bedarfsermittlung.read()
+    st.session_state.example_input_file_1 = file_input_example_1
+    st.session_state.example_input_file_2 = file_input_example_2
 
     # close files
     file_process_desc_nebentaetigkeiten.close()
     file_process_desc_debriefing.close()
     file_process_desc_bedarfsermittlung.close()
+    file_input_example_1.close()
+    file_input_example_2.close()
 
 # Initialize Prompts
 from langchain_core.prompts import ChatPromptTemplate
@@ -54,7 +64,7 @@ prompt_extracting_roles = ChatPromptTemplate.from_messages(
     [
         (
             'system',
-            'Du bist ein Prozessmanager und versuchst Rollen aus einer Prozessbeschreibung heraus zu lesen.',
+            'Du bist ein Prozessmanager extrahierst Rollen aus einer Prozessbeschreibung heraus.',
         ),
         ("human", 'Extrahiere aus folgender Prozessbeschreibung alle Beteiligten Rollen und gib diese als Liste zurück. Prozessbeschreibung: "{prozessbeschreibung}"'),
     ]
@@ -64,7 +74,7 @@ prompt_extracting_activities = ChatPromptTemplate.from_messages(
     [
         (
             'system',
-            'Du bist ein Prozessmanager und versuchst Aktivitäten aus einer Prozessbeschreibung heraus zu lesen.',
+            'Du bist ein Prozessmanager extrahierst Aktivitäten aus einer Prozessbeschreibung heraus.',
         ),
         ("human", 'Extrahiere aus folgender Prozessbeschreibung alle Aktivitäten und gib diese als Liste zurück. Die Aktivitäten sollten so beschrieben sein, wie sie auch in einem BPMN Diagramm genutzt werden. Prozessbeschreibung: "{prozessbeschreibung}"'),
     ]
@@ -74,13 +84,13 @@ prompt_creating_bpmn_diagramm = ChatPromptTemplate.from_messages(
     [
         (
             'system',
-            'Du bist ein Prozessmanager. Dir werden Rollen, Aktivitäten und eine Prozessbeschreibung gegeben. Daraus erstellst du ein Draw.io konformes XML Dokument.'
+            'Du bist ein Prozessmanager. Dir werden zwei draw.io Dateien als Beispiel gegeben welche ein Prozessmodell darstellen und mit 3 Anführungszeichen abgegrenzt sind. Außerdem werden dir Rollen, Aktivitäten und eine Prozessbeschreibung gegeben. Daraus erstellst du ein Draw.io konformes XML Dokument.'
         ),
         ("human", 
          '''Erstelle aus den gegebenen Rollen, Aktivitäten und der Prozessbeschreibung ein Prozessmodell.
          Das XML muss Draw.io konform sein.
          Stelle sicher, dass alle Rollen als Swimlane dargestellt werden.
-         Stelle sicher, dass Verzweigungen als Rauten dargestellt werden und dass diese beschriftet sind.
+         Stelle sicher, dass Verzweigungen, signalisiert durch das Wort "oder", als Rauten dargestellt werden und dass diese beschriftet sind.
          Gib mir nur das Ergebnis in XML zurück. 
          Achte vor allem drauf, dass sich keine Elemente überlappen.
          Swimlanes sind immer nebeneinander.
@@ -88,7 +98,13 @@ prompt_creating_bpmn_diagramm = ChatPromptTemplate.from_messages(
          Die Höhe der Swimlanes muss immer bis an das Ende der Seite gehen.
          Es sollen alle Aktivitäten und Rollen verwendet werden. 
          Rollen die keine Aufgabe übernehmen werden weggelassen.
-         Rollen: {roles}. Aktivitäten: {activities}. Prozessbeschreibung: {process}''')
+         
+         """{example_input_file_1}"""
+         """{example_input_file_2}"""
+         
+         Rollen: {roles}. 
+         Aktivitäten: {activities}. 
+         Prozessbeschreibung: {process}''')
     ]
 )
 
@@ -97,7 +113,7 @@ prompt_roles_refreshed = ChatPromptTemplate.from_messages(
     [
         (
             'system',
-            'Du bist ein Prozessmanager. Dir werden Rollen und eine bestehende Liste an Rollen gegeben und du versuchst die Liste mit den gegebenen Rollen zu erweitern'
+            'Du bist ein Prozessmanager. Dir werden Rollen und eine bestehende Liste an Rollen gegeben und du erweiterst die Liste mit den gegebenen Rollen'
         ),
         ("human", "Erweitere die Liste um die gegebenen Rollen. Rollen: {roles}. Liste: {list}.")
     ]
@@ -107,7 +123,7 @@ prompt_activities_refreshed = ChatPromptTemplate.from_messages(
     [
         (
             'system',
-            'Du bist ein Prozessmanager. Dir werden Aktivitäten und eine bestehende Liste an Aktivitäten gegeben und du versuchst die Liste mit den gegebenen Aktivitäten zu erweitern'
+            'Du bist ein Prozessmanager. Dir werden Aktivitäten und eine bestehende Liste an Aktivitäten gegeben und du erweiterst die Liste mit den gegebenen Aktivitäten'
         ),
         ("human", "Erweitere die Liste um die gegebenen Aktivitäten. Aktivitäten: {activities}. Liste: {list}.")
     ]
@@ -117,7 +133,10 @@ prompt_activities_refreshed = ChatPromptTemplate.from_messages(
 # Test String Prozessinput
 # Start. Mitarbeiter 1 füllt Wasser in die Kaffeemaschine. Danach füllt Mitarbeiter 2 Kaffeebohnen in die Maschine. Ende
 test_process_desc = "Start. Mitarbeiter 1 füllt Wasser in die Kaffeemaschine. Danach füllt Mitarbeiter 2 Kaffeebohnen in die Maschine. Ende"
-init_process = process_desc_debriefing 
+test_process_desc_ppt = '''Recherche: Der Student sucht gezielt nach passenden Praktikumsstellen.
+Erstellung der Unterlagen: Geforderte Dokumente werden vorbereitet und personalisiert.
+Einreichen der Bewerbung: Die Bewerbung wird über ein Online-Portal abgeschickt.'''
+init_process = test_process_desc_ppt 
 
 # init flags for form submit checking
 if 'roles_form_submitted' not in st.session_state:
@@ -153,7 +172,7 @@ if 'response_activity_extraction' not in st.session_state:
 # user input if activities were missing
 if 'extra_activity_input' not in st.session_state:
     st.session_state.extra_activity_input = ""
-                
+
 # function for submit call after adding not extracted roles
 def set_roles_form_submitted():
     st.session_state.roles_form_submitted = True
@@ -269,7 +288,9 @@ if(st.session_state.activity_form_submitted == True):
         response_diagramm_creation = chain.invoke({
             "roles": st.session_state.response_role_extraction,
             "activities": st.session_state.response_activity_extraction,
-            "process" : st.session_state.edited_process_input
+            "process" : st.session_state.edited_process_input,
+            "example_input_file_1" : st.session_state.example_input_file_1,
+            "example_input_file_2" : st.session_state.example_input_file_2
         })
         
         st.write(response_diagramm_creation.content)
