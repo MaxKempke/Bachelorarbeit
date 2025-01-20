@@ -1,87 +1,78 @@
-<mxfile host="app.diagrams.net">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36" version="26.0.4">
   <diagram name="Prozessmodell" id="prozessmodell">
-    <mxGraphModel dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2074" dy="1098" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-
-        <!-- Swimlane: Mitarbeiter -->
-        <mxCell id="2" value="Mitarbeiter" style="swimlane" vertex="1" parent="1">
-          <mxGeometry x="0" y="0" width="400" height="1169" as="geometry" />
+        <mxCell id="2" value="Mitarbeiter" style="swimlane" parent="1" vertex="1">
+          <mxGeometry width="400" height="720" as="geometry" />
         </mxCell>
-
-        <!-- Swimlane: HR -->
-        <mxCell id="3" value="HR" style="swimlane" vertex="1" parent="1">
-          <mxGeometry x="400" y="0" width="400" height="1169" as="geometry" />
+        <mxCell id="5" value="Mitarbeiter informiert HR" style="rounded=1;whiteSpace=wrap;html=1;" parent="2" vertex="1">
+          <mxGeometry x="120" y="120" width="160" height="60" as="geometry" />
         </mxCell>
-
-        <!-- Swimlane: Geschäftsführung -->
-        <mxCell id="4" value="Geschäftsführung" style="swimlane" vertex="1" parent="1">
-          <mxGeometry x="800" y="0" width="400" height="1169" as="geometry" />
-        </mxCell>
-
-        <!-- Prozessschritte -->
-        <mxCell id="5" value="Mitarbeiter informiert HR" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="2">
-          <mxGeometry x="20" y="20" width="160" height="60" as="geometry" />
-        </mxCell>
-
-        <mxCell id="6" value="Informationen einholen" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="3">
-          <mxGeometry x="20" y="100" width="160" height="60" as="geometry" />
-        </mxCell>
-
-        <mxCell id="7" value="Prüfung Wettbewerb" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="3">
-          <mxGeometry x="20" y="180" width="100" height="60" as="geometry" />
-        </mxCell>
-
-        <mxCell id="8" value="JA" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;" edge="1" parent="3" source="7" target="9">
+        <mxCell id="pGCzCs_kdM78qK0t9SrT-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="2" source="pGCzCs_kdM78qK0t9SrT-19" target="5">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <mxCell id="9" value="Ablehnung" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="3">
-          <mxGeometry x="20" y="260" width="160" height="60" as="geometry" />
+        <mxCell id="pGCzCs_kdM78qK0t9SrT-19" value="Start" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=standard;symbol=general;" vertex="1" parent="2">
+          <mxGeometry x="175" y="30" width="50" height="50" as="geometry" />
         </mxCell>
-
-        <mxCell id="10" value="NEIN" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;" edge="1" parent="3" source="7" target="11">
+        <mxCell id="3" value="HR" style="swimlane" parent="1" vertex="1">
+          <mxGeometry x="400" width="400" height="720" as="geometry" />
+        </mxCell>
+        <mxCell id="6" value="Informationen einholen" style="rounded=1;whiteSpace=wrap;html=1;" parent="3" vertex="1">
+          <mxGeometry x="125" y="120" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7" value="Prüfung Wettbewerb" style="rhombus;whiteSpace=wrap;html=1;" parent="3" vertex="1">
+          <mxGeometry x="155" y="210" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8" value="JA" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;" parent="3" source="7" target="9" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <mxCell id="11" value="Dokument erstellen" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="3">
-          <mxGeometry x="20" y="340" width="160" height="60" as="geometry" />
-        </mxCell>
-
-        <mxCell id="12" value="Rücksprache bei Unklarheiten" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="3">
-          <mxGeometry x="20" y="420" width="160" height="60" as="geometry" />
-        </mxCell>
-
-        <mxCell id="13" value="Dokument zur Unterschrift" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="3">
-          <mxGeometry x="20" y="500" width="160" height="60" as="geometry" />
-        </mxCell>
-
-        <mxCell id="14" value="Dokument einscannen" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="3">
-          <mxGeometry x="20" y="580" width="160" height="60" as="geometry" />
-        </mxCell>
-
-        <!-- Verbindungen -->
-        <mxCell id="15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;" edge="1" parent="1" source="5" target="6">
+        <mxCell id="pGCzCs_kdM78qK0t9SrT-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="3" source="9" target="pGCzCs_kdM78qK0t9SrT-23">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <mxCell id="16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;" edge="1" parent="1" source="6" target="7">
+        <mxCell id="9" value="Ablehnung" style="rounded=1;whiteSpace=wrap;html=1;" parent="3" vertex="1">
+          <mxGeometry x="20" y="290" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="10" value="NEIN" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;" parent="3" source="7" target="11" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <mxCell id="17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;" edge="1" parent="1" source="11" target="12">
+        <mxCell id="11" value="Dokument erstellen" style="rounded=1;whiteSpace=wrap;html=1;" parent="3" vertex="1">
+          <mxGeometry x="220" y="290" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="12" value="Rücksprache bei Unklarheiten" style="rounded=1;whiteSpace=wrap;html=1;" parent="3" vertex="1">
+          <mxGeometry x="220" y="375" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="13" value="Dokument zur Unterschrift" style="rounded=1;whiteSpace=wrap;html=1;" parent="3" vertex="1">
+          <mxGeometry x="220" y="460" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pGCzCs_kdM78qK0t9SrT-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="3" source="14" target="pGCzCs_kdM78qK0t9SrT-21">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <mxCell id="18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;" edge="1" parent="1" source="12" target="13">
+        <mxCell id="14" value="Dokument einscannen" style="rounded=1;whiteSpace=wrap;html=1;" parent="3" vertex="1">
+          <mxGeometry x="220" y="550" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pGCzCs_kdM78qK0t9SrT-21" value="Ende" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=terminate2;" vertex="1" parent="3">
+          <mxGeometry x="275" y="640" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="pGCzCs_kdM78qK0t9SrT-23" value="Ende" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=terminate2;" vertex="1" parent="3">
+          <mxGeometry x="75" y="375" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;" parent="1" source="5" target="6" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <mxCell id="19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;" edge="1" parent="1" source="13" target="14">
+        <mxCell id="16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;" parent="1" source="6" target="7" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
+        <mxCell id="17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;" parent="1" source="11" target="12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;" parent="1" source="12" target="13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;" parent="1" source="13" target="14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>

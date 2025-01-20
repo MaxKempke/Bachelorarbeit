@@ -87,7 +87,8 @@ prompt_creating_bpmn_diagramm = ChatPromptTemplate.from_messages(
             'Du bist ein Prozessmanager. Dir werden zwei draw.io Dateien als Beispiel gegeben welche ein Prozessmodell darstellen und mit 3 Anführungszeichen abgegrenzt sind. Außerdem werden dir Rollen, Aktivitäten und eine Prozessbeschreibung gegeben. Daraus erstellst du ein Draw.io konformes XML Dokument.'
         ),
         ("human", 
-         '''Erstelle aus den gegebenen Rollen, Aktivitäten und der Prozessbeschreibung ein Prozessmodell.
+         '''
+         Erstelle aus den gegebenen Rollen, Aktivitäten und der Prozessbeschreibung ein Prozessmodell.
          Das XML muss Draw.io konform sein.
          Stelle sicher, dass alle Rollen als Swimlane dargestellt werden.
          Stelle sicher, dass Verzweigungen, signalisiert durch das Wort "oder", als Rauten dargestellt werden und dass diese beschriftet sind.
@@ -104,7 +105,9 @@ prompt_creating_bpmn_diagramm = ChatPromptTemplate.from_messages(
          
          Rollen: {roles}. 
          Aktivitäten: {activities}. 
-         Prozessbeschreibung: {process}''')
+         Prozessbeschreibung: {process}
+         '''
+         )
     ]
 )
 
@@ -133,8 +136,9 @@ prompt_activities_refreshed = ChatPromptTemplate.from_messages(
 # Test String Prozessinput
 # Start. Mitarbeiter 1 füllt Wasser in die Kaffeemaschine. Danach füllt Mitarbeiter 2 Kaffeebohnen in die Maschine. Ende
 test_process_desc = "Start. Mitarbeiter 1 füllt Wasser in die Kaffeemaschine. Danach füllt Mitarbeiter 2 Kaffeebohnen in die Maschine. Ende"
-test_process_desc_ppt = '''Recherche: Der Student sucht gezielt nach passenden Praktikumsstellen.
-Erstellung der Unterlagen: Geforderte Dokumente werden vorbereitet und personalisiert.
+test_process_desc_ppt = '''Recherche: Der Student sucht nach passenden Praktikumsstellen.
+Wenn eine Praktikumsstelle gefunden wurde folgt die Erstellung der Unterlagen, falls nicht wird die Suche wiederholt.
+Erstellung der Unterlagen: Geforderte Dokumente werden erstellt.
 Einreichen der Bewerbung: Die Bewerbung wird über ein Online-Portal abgeschickt.'''
 init_process = test_process_desc_ppt 
 
@@ -257,7 +261,7 @@ if(st.session_state.roles_form_submitted == True):
         # Ask user if all activities were extracted correctly, if not the user can add missing ones
         if(st.session_state.response_activity_extraction != ""):
             st.write("Sind dies alle im Prozess enthaltenen Aktivitäten? Falls nicht bitte weitere Aktivitäten angeben.")
-            extra_activity_input = st.text_input(label="activities")
+            extra_activity_input = st.text_input(label="Aktivitäten")
             st.session_state.extra_activity_input = extra_activity_input
         
         
@@ -273,7 +277,7 @@ if(st.session_state.roles_form_submitted == True):
         
         st.write(st.session_state.response_activity_extraction)
         
-        # draw buttons for updating or confirming acitivities
+        # draw buttons for updating or confirming activities
         col1, col2 = st.columns([1,1])
         with col1:
             st.form_submit_button("Aktivitäten bestätigen", on_click=set_activity_form_submitted)
