@@ -140,7 +140,7 @@ test_process_desc_ppt = '''Recherche: Der Student sucht nach passenden Praktikum
 Wenn eine Praktikumsstelle gefunden wurde folgt die Erstellung der Unterlagen, falls nicht wird die Suche wiederholt.
 Erstellung der Unterlagen: Geforderte Dokumente werden erstellt.
 Einreichen der Bewerbung: Die Bewerbung wird über ein Online-Portal abgeschickt.'''
-init_process = test_process_desc_ppt 
+init_process = process_desc_bedarfsermittlung 
 
 # init flags for form submit checking
 if 'roles_form_submitted' not in st.session_state:
