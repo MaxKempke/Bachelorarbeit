@@ -64,9 +64,26 @@ prompt_extracting_roles = ChatPromptTemplate.from_messages(
     [
         (
             'system',
-            'Du bist ein Prozessmanager extrahierst Rollen aus einer Prozessbeschreibung heraus.',
+            ''' 
+            Du bist ein spezialisierter KI-Assistent, dessen einzige Aufgabe es ist, präzise und vollständig alle Rollen zu extrahieren, die in einer bereitgestellten Prozessbeschreibung eine Aktivität ausführen.
+            Rollen und Aktivitäten werden nach der BPMN Spezifikation definiert. 
+            Antworte ausschließlich mit einer Liste der Rollen im gegebenen Format ohne zusätzliche Erläuterungen oder Informationen. 
+            Format:
+            - Eintrag1
+            - Eintrag2
+            - Eintrag3
+            ''',
         ),
-        ("human", 'Extrahiere aus folgender Prozessbeschreibung alle Beteiligten Rollen und gib diese als Liste zurück. Prozessbeschreibung: "{prozessbeschreibung}"'),
+        ("human", '''
+         Analysiere Schritt für Schritt die folgende Prozessbeschreibung. 
+Identifiziere zunächst jede Aktivität, dann ermittle daraus, welche Rolle die Aktivität jeweils ausführt. 
+Eine Aktivität kann nur von einer Rolle ausgeführt werden.
+Gib keine Rollen aus die nicht explizit eine Aktivität ausführen.
+Nenne am Ende nur die vollständige Liste aller Rollen die Aktivitäten ausführen. 
+Gib nicht deine Analyse aus. 
+Prozessbeschreibung: "{prozessbeschreibung}"
+'''
+),
     ]
 )
 
@@ -74,9 +91,27 @@ prompt_extracting_activities = ChatPromptTemplate.from_messages(
     [
         (
             'system',
-            'Du bist ein Prozessmanager extrahierst Aktivitäten aus einer Prozessbeschreibung heraus.',
+            '''
+            Du bist ein spezialisierter KI-Assistent, dessen einzige Aufgabe es ist, präzise und vollständig alle Aktivitäten zu extrahieren, die in einer bereitgestellten Prozessbeschreibung ausgeführt werden. 
+            Aktivitäten werden nach der BPMN Spezifikation definiert. 
+            Antworte ausschließlich mit einer Liste der Aktivitäten im gegebenen Format ohne zusätzliche Erläuterungen oder Informationen. 
+            Format:
+            - Eintrag1
+            - Eintrag2
+            - Eintrag3
+            ''',
         ),
-        ("human", 'Extrahiere aus folgender Prozessbeschreibung alle Aktivitäten und gib diese als Liste zurück. Die Aktivitäten sollten so beschrieben sein, wie sie auch in einem BPMN Diagramm genutzt werden. Prozessbeschreibung: "{prozessbeschreibung}"'),
+        ("human",
+         '''
+Extrahiere die Aktivitäten aus der folgenden Prozessbeschreibung: 
+Prozessbeschreibung: "Mitarbeiter A startet den Prozess und informiert Mitarbeiter B. Mitarbeiter B prüft den Vorgang und leitet ihn an Mitarbeiter C weiter, der schließlich die Freigabe erteilt." 
+Aktivitäten: ["Prozess starten", "Mitarbeiter B informieren", "Vorgang prüfen", "an Mitarbeiter C weiterleiten", "Freigabe erteilen"] 
+Prozessbeschreibung: "Team X erhält die Aufgabe und delegiert sie entweder an Team Y oder Team W. Team Y oder Team W bearbeitet die Aufgabe und sendet die Ergebnisse zur Prüfung an Team Z zurück." 
+Aktivitäten: ["Aufgabe an Team Y oder Team W deligieren", "Aufgabe bearbeiten", "Ergebnisse zur Prüfung zurück senden"] 
+Prozessbeschreibung: "Person 1 erfasst wichtige Informationen und leitet diese an Person 2 weiter. Person 2 analysiert die Informationen und bespricht eventuelle Rückfragen mit Person 3, bevor die finale Entscheidung getroffen wird." 
+Aktivitäten: ["wichtige Informationen erfassen", "Mitarbeiter B informieren", "Informationen analysieren", "eventuelle Rückfragen besprechen", "Entscheidung treffen"] 
+Prozessbeschreibung: "{prozessbeschreibung}"
+'''),
     ]
 )
 
@@ -84,29 +119,57 @@ prompt_creating_bpmn_diagramm = ChatPromptTemplate.from_messages(
     [
         (
             'system',
-            'Du bist ein Prozessmanager. Dir werden zwei draw.io Dateien als Beispiel gegeben welche ein Prozessmodell darstellen und mit 3 Anführungszeichen abgegrenzt sind. Außerdem werden dir Rollen, Aktivitäten und eine Prozessbeschreibung gegeben. Daraus erstellst du ein Draw.io konformes XML Dokument.'
+            '''
+            Du bist ein spezialisierter Prompt-Generator, der präzise und korrekte XML-Dokumente im draw.io-kompatiblen Format erstellt.
+Deine Aufgabe ist es, aus klar definierten Eingabedaten (Listen von Rollen, Aktivitäten und einer textuellen Prozessbeschreibung) ein vollständiges, valides und Draw.io-konformes XML-Dokument zu generieren.
+Um bessere Prozessmodelle erstellen zu können bekommst du 2 Beispieldateien.
+Stelle sicher, dass das Ergebnis direkt importierbar und fehlerfrei in draw.io dargestellt werden kann. Achte auf korrekte Nutzung von Swimlanes, Ereignissen, Aktivitäten und Gateways.
+Jedes Diagramm muss ein beschriftetes Start- und ein End-Ereigniss haben.
+Gib nur die XML Datei zurück.
+            '''
         ),
         ("human", 
          '''
-         Erstelle aus den gegebenen Rollen, Aktivitäten und der Prozessbeschreibung ein Prozessmodell.
-         Das XML muss Draw.io konform sein.
-         Stelle sicher, dass alle Rollen als Swimlane dargestellt werden.
-         Stelle sicher, dass Verzweigungen, signalisiert durch das Wort "oder", als Rauten dargestellt werden und dass diese beschriftet sind.
-         Gib mir nur das Ergebnis in XML zurück. 
-         Achte vor allem drauf, dass sich keine Elemente überlappen.
-         Swimlanes sind immer nebeneinander.
-         Achte auf eine angemessen Breite der Swimlanes und verdopple diese dann.
-         Die Höhe der Swimlanes muss immer bis an das Ende der Seite gehen.
-         Es sollen alle Aktivitäten und Rollen verwendet werden. 
-         Rollen die keine Aufgabe übernehmen werden weggelassen.
-         
-         """{example_input_file_1}"""
-         """{example_input_file_2}"""
-         
-         Rollen: {roles}. 
-         Aktivitäten: {activities}. 
-         Prozessbeschreibung: {process}
-         '''
+Erstelle aus den unten angegebenen Informationen (Liste von Rollen, Aktivitäten und Prozessbeschreibung) ein vollständiges, draw.io-konformes XML-Dokument, das direkt in draw.io importiert und visualisiert werden kann. 
+Verwende dabei zwingend die in den beiden Beispiel-Dateien angegebenen XML-Elemente und halte dich strikt an deren Struktur und Formatierung.
+
+Gehe Schritt für Schritt wie folgt vor:
+1. Analyse der Informationen:
+Lies die gegebene Prozessbeschreibung sorgfältig durch.
+Identifiziere, welche Rolle welche Aktivität durchführt.
+Prüfe, ob alle angegebenen Rollen tatsächlich mindestens eine Aktivität ausführen. Rollen ohne Aktivität dürfen nicht dargestellt werden.
+
+2. Strukturierung des Diagramms gemäß Beispiele:
+Erstelle für jede verbleibende Rolle eine eigene Swimlane.
+Ordne Swimlanes exakt horizontal nebeneinander an und beschrifte sie eindeutig mit den Rollennamen, analog zu den Beispieldateien.
+Platziere alle Aktivitäten exakt in der Swimlane der Rolle, die sie ausführt.
+
+3. Darstellung des Ablaufs:
+Platziere Aktivitäten vertikal untereinander in der korrekten Reihenfolge des Prozesses innerhalb der jeweiligen Swimlane.
+Benenne jede Aktivität exakt so wie angegeben.
+Aktivitäten dürfen nicht außerhalb der Swimlanes positioniert werden.
+
+4. Verbindung und Logik:
+Verwende gerichtete Pfeile zur exakten Darstellung der Reihenfolge.
+Wenn Verzweigungen oder Bedingungen existieren, verwende beschriftete Gateways analog zu den Beispielen, um Abläufe eindeutig darzustellen.
+
+5. Anordnung und Visualisierung:
+Stelle sicher, dass sich keine Elemente überlappen oder verdeckt werden.
+Halte eine angemessene Breite und Höhe der Swimlanes analog zu den Beispielen ein, um Übersichtlichkeit zu gewährleisten.
+
+6. Vollständigkeit und Kompatibilität:
+Erstelle abschließend ein vollständiges XML-Dokument, das sämtliche erforderlichen Attribute, Definitionen und Tags enthält, sodass es problemlos und fehlerfrei in draw.io geladen werden kann.
+Orientiere dich bei der Erstellung strikt an der Struktur der folgenden Beispieldateien:
+
+Beispieldateien:
+"""{example_input_file_1}"""
+"""{example_input_file_2}"""
+
+Angegebene Informationen:
+Rollen: {roles}
+Aktivitäten: {activities}
+Prozessbeschreibung: "{process}"
+'''
          )
     ]
 )
@@ -140,6 +203,8 @@ test_process_desc_ppt = '''Recherche: Der Student sucht nach passenden Praktikum
 Wenn eine Praktikumsstelle gefunden wurde folgt die Erstellung der Unterlagen, falls nicht wird die Suche wiederholt.
 Erstellung der Unterlagen: Geforderte Dokumente werden erstellt.
 Einreichen der Bewerbung: Die Bewerbung wird über ein Online-Portal abgeschickt.'''
+#init_process = process_desc_debriefing
+#init_process = process_desc_nebentaetigkeiten
 init_process = process_desc_bedarfsermittlung 
 
 # init flags for form submit checking
