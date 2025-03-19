@@ -251,7 +251,7 @@ st.title("Prozessmodell Generator")
 # App start. Form for input process description
 with st.form("process_description_input"):
     # value sets initial process description for testing
-    desc_input = st.text_area(label="Bitte geben sie ihre Prozessbeschreibung an", value="", height=500)
+    desc_input = st.text_area(label="Bitte geben sie ihre Prozessbeschreibung an", value=init_process, height=500)
     init_process = desc_input
     st.form_submit_button("Rollen extrahieren", on_click=set_process_description_form_submitted, args=(desc_input,))
 
