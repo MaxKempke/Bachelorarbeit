@@ -187,7 +187,7 @@ Erstellung der Unterlagen: Geforderte Dokumente werden erstellt.
 Einreichen der Bewerbung: Die Bewerbung wird über ein Online-Portal abgeschickt.'''
 #init_process = process_desc_debriefing
 #init_process = process_desc_nebentaetigkeiten
-init_process = process_desc_bedarfsermittlung 
+init_process = "" #process_desc_bedarfsermittlung 
 
 # init flags for form submit checking
 if 'roles_form_submitted' not in st.session_state:
