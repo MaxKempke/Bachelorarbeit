@@ -130,43 +130,25 @@ Gib nur die XML Datei zurück.
         ),
         ("human", 
          '''
-Erstelle aus den unten angegebenen Informationen (Liste von Rollen, Aktivitäten und Prozessbeschreibung) ein vollständiges, draw.io-konformes XML-Dokument, das direkt in draw.io importiert und visualisiert werden kann. 
-Verwende dabei zwingend die in den beiden Beispiel-Dateien angegebenen XML-Elemente und halte dich strikt an deren Struktur und Formatierung.
-
-Gehe Schritt für Schritt wie folgt vor:
-1. Analyse der Informationen:
-Lies die gegebene Prozessbeschreibung sorgfältig durch.
-Identifiziere, welche Rolle welche Aktivität durchführt.
-Prüfe, ob alle angegebenen Rollen tatsächlich mindestens eine Aktivität ausführen. Rollen ohne Aktivität dürfen nicht dargestellt werden.
-
-2. Strukturierung des Diagramms gemäß Beispiele:
-Erstelle für jede verbleibende Rolle eine eigene Swimlane.
-Ordne Swimlanes exakt horizontal nebeneinander an und beschrifte sie eindeutig mit den Rollennamen, analog zu den Beispieldateien.
-Platziere alle Aktivitäten exakt in der Swimlane der Rolle, die sie ausführt.
-
-3. Darstellung des Ablaufs:
-Platziere Aktivitäten vertikal untereinander in der korrekten Reihenfolge des Prozesses innerhalb der jeweiligen Swimlane.
-Benenne jede Aktivität exakt so wie angegeben.
-Aktivitäten dürfen nicht außerhalb der Swimlanes positioniert werden.
-
-4. Verbindung und Logik:
-Verwende gerichtete Pfeile zur exakten Darstellung der Reihenfolge.
-Wenn Verzweigungen oder Bedingungen existieren, verwende beschriftete Gateways analog zu den Beispielen, um Abläufe eindeutig darzustellen.
-
-5. Anordnung und Visualisierung:
-Stelle sicher, dass sich keine Elemente überlappen oder verdeckt werden.
-Halte eine angemessene Breite und Höhe der Swimlanes analog zu den Beispielen ein, um Übersichtlichkeit zu gewährleisten.
-
-6. Vollständigkeit und Kompatibilität:
-Erstelle abschließend ein vollständiges XML-Dokument, das sämtliche erforderlichen Attribute, Definitionen und Tags enthält, sodass es problemlos und fehlerfrei in draw.io geladen werden kann.
-Orientiere dich bei der Erstellung strikt an der Struktur der folgenden Beispieldateien:
-
-Beispieldateien:
+Du erhältst zwei Beispieldateien für draw.io-konforme Prozessmodelle. Verwende die in den beiden Beispielen enthaltenen XML-Elemente.
+Beispieldateien: 
 """{example_input_file_1}"""
 """{example_input_file_2}"""
 
-Angegebene Informationen:
-Rollen: {roles}
+Rollen werden wie in den Beispielen als Swimlanes dargestellt.
+Swimlanes werden wie in den Beispielen nebeneinander angeordnet und beschrifte sie eindeutig.
+Rollen, die keine Aktivität ausführen, dürfen nicht dargestellt werden.
+
+Alle angegebenen Aktivitäten müssen im erstellten Dokument enthalten sein.
+Aktivitäten werden wie in den Beispielen  untereinander angeordnet.
+Aktivitäten dürfen wie in den Beispielen nicht außerhalb von Swimlanes positioniert werden.
+Benenne Aktivitäten exakt wie angegeben.
+
+Verwende beschriftete Gateways, wenn diese für die präzise Darstellung des Ablaufs notwendig sind.
+Stelle sicher, dass sich einzelne Elemente nicht überlappen.
+Erstelle aus den Anweisungen und den unten angegebenen Informationen (Liste der Rollen, Aktivitäten und Prozessbeschreibung) ein vollständiges, draw.io-konformes XML-Dokument, das direkt in draw.io importiert werden kann.
+
+Angegebene Informationen: Rollen: {roles}
 Aktivitäten: {activities}
 Prozessbeschreibung: "{process}"
 '''
