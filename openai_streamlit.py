@@ -187,7 +187,7 @@ Erstellung der Unterlagen: Geforderte Dokumente werden erstellt.
 Einreichen der Bewerbung: Die Bewerbung wird über ein Online-Portal abgeschickt.'''
 #init_process = process_desc_debriefing
 #init_process = process_desc_nebentaetigkeiten
-init_process = process_desc_bedarfsermittlung 
+# init_process = process_desc_bedarfsermittlung 
 
 # init flags for form submit checking
 if 'roles_form_submitted' not in st.session_state:
@@ -202,7 +202,7 @@ if 'roles_form_submitted' not in st.session_state:
     
 # First process description from user
 if 'original_process_input' not in st.session_state:
-    st.session_state.original_process_input = init_process
+    st.session_state.original_process_input = "" #init_process
     
 # edited process description from user for further processing
 if 'edited_process_input' not in st.session_state:
@@ -235,7 +235,7 @@ def set_roles_form_updated():
 def set_process_description_form_submitted(process_description):
     st.session_state.desc_form_submitted = True 
     st.session_state.original_process_input = process_description   
-    init_process = process_description
+    # init_process = process_description
     if st.session_state.roles_form_submitted == False:
         st.session_state.edited_process_input = process_description
         
@@ -251,9 +251,9 @@ st.title("Prozessmodell Generator")
 # App start. Form for input process description
 with st.form("process_description_input"):
     # value sets initial process description for testing
-    desc_input = st.text_area(label="Bitte geben sie ihre Prozessbeschreibung an", value=init_process, height=500)
-    init_process = desc_input
-    st.form_submit_button("Rollen extrahieren", on_click=set_process_description_form_submitted, args=(desc_input,))
+    desc_input = st.text_area(label="Bitte geben sie ihre Prozessbeschreibung an", height=500)
+    # init_process = desc_input
+    st.form_submit_button("Rollen extrahieren", on_click=set_process_description_form_submitted, args=(desc_input))
 
 # Second form for extracting and correcting roles, only visible after description input
 if(st.session_state.desc_form_submitted == True):
