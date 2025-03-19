@@ -253,7 +253,7 @@ with st.form("process_description_input"):
     # value sets initial process description for testing
     desc_input = st.text_area(label="Bitte geben sie ihre Prozessbeschreibung an", height=500)
     # init_process = desc_input
-    st.form_submit_button("Rollen extrahieren", on_click=set_process_description_form_submitted, args=(desc_input))
+    st.form_submit_button("Rollen extrahieren", on_click=set_process_description_form_submitted, args=(desc_input,))
 
 # Second form for extracting and correcting roles, only visible after description input
 if(st.session_state.desc_form_submitted == True):
