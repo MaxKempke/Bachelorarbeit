@@ -187,7 +187,7 @@ Erstellung der Unterlagen: Geforderte Dokumente werden erstellt.
 Einreichen der Bewerbung: Die Bewerbung wird über ein Online-Portal abgeschickt.'''
 #init_process = process_desc_debriefing
 #init_process = process_desc_nebentaetigkeiten
-# init_process = process_desc_bedarfsermittlung 
+#init_process = process_desc_bedarfsermittlung 
 
 # init flags for form submit checking
 if 'roles_form_submitted' not in st.session_state:
@@ -253,7 +253,9 @@ with st.form("process_description_input"):
     # value sets initial process description for testing
     desc_input = st.text_area(label="Bitte geben sie ihre Prozessbeschreibung an", height=500)
     # init_process = desc_input
-    st.form_submit_button("Rollen extrahieren", on_click=set_process_description_form_submitted, args=(desc_input,))
+    submit_form = st.form_submit_button("Rollen extrahieren")
+    if(submit_form):
+        set_process_description_form_submitted(desc_input)
 
 # Second form for extracting and correcting roles, only visible after description input
 if(st.session_state.desc_form_submitted == True):
