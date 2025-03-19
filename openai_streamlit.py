@@ -235,6 +235,7 @@ def set_roles_form_updated():
 def set_process_description_form_submitted(process_description):
     st.session_state.desc_form_submitted = True 
     st.session_state.original_process_input = process_description   
+    init_process = process_description
     if st.session_state.roles_form_submitted == False:
         st.session_state.edited_process_input = process_description
         
